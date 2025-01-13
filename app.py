@@ -2,9 +2,11 @@ import streamlit as st
 import pandas as pd 
 import numpy as np 
 import pickle
+import os
 
-
-with open("gender_classification_thinking.pkl", "rb") as file:
+# Load the model
+model_path = os.path.join(os.path.dirname(__file__), "gender_classification_thinking.pkl")
+with open(model_path, "rb") as file:
     model = pickle.load(file)
 
 
